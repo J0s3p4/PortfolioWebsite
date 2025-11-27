@@ -2,6 +2,11 @@
 import * as THREE from 'three';
 import './style.css'
 
+// Temp for testing
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+
+
 const red = 0x19ff9c;
 const blue = 0x1f8eed;
 
@@ -92,11 +97,11 @@ var smokeGeometry = new THREE.PlaneGeometry(300,300);
 var smokeMaterial = new THREE.MeshLambertMaterial({ map: smokeTexture, opacity: 0.6, transparent: true});
 var smokeParticles;
 smokeParticles = [];
-for (var i = 0; i < 60; i++)
+for (var i = 0; i < 5; i++)
 {    
     var smoke_element = new THREE.Mesh(smokeGeometry,smokeMaterial);
     smoke_element.scale.set(2, 2, 2);
-    smoke_element.position.set( Math.random()*1000-500, Math.random()*1000-500, Math.random()*1000-100);
+    smoke_element.position.set( Math.random()*200-100, Math.random()*200-300, Math.random()*200-100);
     smoke_element.rotation.z = Math.random() * 360;
             
     scene.add(smoke_element);
@@ -221,7 +226,8 @@ sprite.position.set(-30,12,1);
 
 
 
-
+//temp orbital controls
+const controls = new OrbitControls(camera, renderer.domElement);
 
 
 //Clock
@@ -254,6 +260,8 @@ function animate(){
         smokeParticles[i].rotation.z += (delta * 0.025);
     }
 
+    //temp orbital controls
+    controls.update(); // IMPORTANT for damping
 
 
     renderer.render(scene,camera);
