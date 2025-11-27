@@ -157,6 +157,15 @@ const FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
 FaceImageMesh.position.set(26,8,1);
 scene.add(FaceImageMesh);
 
+// BioImage
+var BioImageTexture = new THREE.TextureLoader().load('/assets/textimages/BioText2000x2000.png');
+const BioImageGeometry = new THREE.PlaneGeometry(20, 20);   // width, height
+const BioImageMaterial = new THREE.MeshBasicMaterial({ map: BioImageTexture, transparent: true, });
+const BioImageMesh = new THREE.Mesh(BioImageGeometry, BioImageMaterial);
+
+BioImageMesh.position.set(26,-8,1);
+scene.add(BioImageMesh);
+
 
 //-------------------------------------------------------------------------
 // Menu2 LEFTMENU
