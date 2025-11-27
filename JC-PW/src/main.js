@@ -27,7 +27,7 @@ function updateDateTime() {
 }
 updateInterval = setInterval(updateDateTime, 100);
 
-
+/*
 //Name Randomizer
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 document.querySelector("h1").onmouseover = event =>{
@@ -52,7 +52,7 @@ let iterations = 0;
   iterations+=1/2;
 }, 100);
 }
-
+*/
 
 
 //Initialize 3D scene
@@ -93,7 +93,7 @@ scene.add(sphere)
 
 //SMOKE
 var smokeTexture = new THREE.TextureLoader().load('smoke.png');
-var smokeGeometry = new THREE.PlaneGeometry(300,300);
+var smokeGeometry = new THREE.PlaneGeometry(200,200);
 var smokeMaterial = new THREE.MeshLambertMaterial({ map: smokeTexture, opacity: 0.6, transparent: true});
 var smokeParticles;
 smokeParticles = [];
