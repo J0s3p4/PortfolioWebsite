@@ -1,3 +1,5 @@
+//animation.js
+
 /**
  * Updates the rotation and movement of all animated objects.
  * @param {number} delta - The time elapsed since the last frame (from THREE.Clock).

@@ -1,7 +1,9 @@
+//objects.js
+
 import * as THREE from 'three';
 
 // Exported Meshes (initialized later)
-export let torus1, torus2, sphere, pole, pole2;
+export let torus1, torus2, sphere, pole, pole2, NameTitleMesh;
 export const smokeParticles = [];
 
 /**
@@ -22,13 +24,16 @@ export function setupObjects(scene, color) {
 
     scene.add(torus2);
     scene.add(torus1);
+    torus1.name = 'Torus1';
 
     // --- Background Sphere ---
     const sphereGeometry = new THREE.SphereGeometry(50, 30, 20)
     const sphereMaterial = new THREE.MeshBasicMaterial({ color: color, wireframe: true });
     sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphere);
+  
 
+    /*
     // --- SMOKE Particles ---
     var smokeTexture = new THREE.TextureLoader().load('/assets/images/smoke.png');
     var smokeGeometry = new THREE.PlaneGeometry(200, 200);
@@ -43,21 +48,25 @@ export function setupObjects(scene, color) {
         scene.add(smoke_element);
         smokeParticles.push(smoke_element);
     }
-
-    // --- Top Menu Box & Text ---
+*/
+    // --- Top Menu Box & Text ------------------------------------------------
     var roundedBoxGeometry = new THREE.BoxGeometry(70, 5, 1, 5, 1, 5);
     var roundedBox = new THREE.Mesh(roundedBoxGeometry, new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.3 }));
     roundedBox.position.set(0, 20.5, 0);
     scene.add(roundedBox);
 
-    var NameTitleTexture = new THREE.TextureLoader().load('/assets/textimages/NameText1000x200.png');
+    const NameTitleTexture = new THREE.TextureLoader().load('/assets/textimages/NameText1000x200.png');
     const NameTitleGeometry = new THREE.PlaneGeometry(20, 4);
-    const NameTitleMaterial = new THREE.MeshBasicMaterial({ map: NameTitleTexture, transparent: true });
-    const NameTitleMesh = new THREE.Mesh(NameTitleGeometry, NameTitleMaterial);
+    const NameTitleMaterial = new THREE.MeshBasicMaterial({ map: NameTitleTexture, 
+        transparent: true,
+        side: THREE.DoubleSide, });
+    NameTitleMesh = new THREE.Mesh(NameTitleGeometry, NameTitleMaterial);
     NameTitleMesh.position.set(0, 19.5, 1);
     scene.add(NameTitleMesh);
 
-    // --- Menu1 RIGHTMENU ---
+    NameTitleMesh.name = 'NameTitle';
+
+    // ---- Menu1 RIGHTMENU ------------------------------------------------
     var rightMenuBoxGeometry = new THREE.BoxGeometry(25, 35, 1, 5, 1, 5);
     var rightMenuBox = new THREE.Mesh(rightMenuBoxGeometry, new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.3 }));
     rightMenuBox.position.set(27.5, -2.5, 0);
@@ -71,7 +80,7 @@ export function setupObjects(scene, color) {
     FaceImageMesh.position.set(26, 7, 1);
     scene.add(FaceImageMesh);
 
-    // Bio Text/Title Meshes (omitted for brevity, but you'd place them here)
+    // Bio Text/Title Meshes 
     var BioImageTexture = new THREE.TextureLoader().load('/assets/textimages/BioText2000x2000.png');
     const BioImageGeometry = new THREE.PlaneGeometry(20, 20);
     const BioImageMaterial = new THREE.MeshBasicMaterial({ map: BioImageTexture, transparent: true, });
@@ -87,7 +96,7 @@ export function setupObjects(scene, color) {
     scene.add(BioTitleTextMesh);
 
 
-    // --- Menu2 LEFTMENU ---
+    // --- Menu2 LEFTMENU -------------------------------------------------
     var leftMenuBox = new THREE.Mesh(rightMenuBoxGeometry, new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.3 }));
     leftMenuBox.position.set(-27.5, -2.5, 0);
     scene.add(leftMenuBox);
@@ -107,7 +116,7 @@ export function setupObjects(scene, color) {
     pole = new THREE.Mesh(poleGeometry, poleMaterial);
     pole.position.set(-40, -2.5, 0);
     scene.add(pole);
-
+    
     pole2 = new THREE.Mesh(poleGeometry, poleMaterial);
     pole2.position.set(40, -2.5, 0);
     scene.add(pole2);

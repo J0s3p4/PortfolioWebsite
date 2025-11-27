@@ -1,3 +1,5 @@
+// sceneManager.js
+
 import * as THREE from 'three';
 
 let scene;
