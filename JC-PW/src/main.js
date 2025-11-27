@@ -117,39 +117,63 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
 }
 
-//menu1
+//-------------------------------------------------------------------------
+
+// Top Menu
+var roundedBoxGeometry = new THREE.BoxGeometry( 70, 5, 1, 5, 1, 5 );
+var roundedBox = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial( { color: color, transparent:true, opacity:0.3 } ) );
+scene.add( roundedBox );
+roundedBox.position.set(0,20.5,0);
+
+// create a canvas element
+var canvas = document.createElement('canvas');
+var context = canvas.getContext('2d');
+// set the font and style of the text
+context.font = "Bold 40px Arial";
+context.fillStyle = "rgba(255,255,255,0.95)";
+// draw the text onto the canvas
+context.fillText('JOSEPH CARLYLE', 0, 50);
+// create a texture from the canvas
+var texture = new THREE.Texture(canvas) 
+texture.needsUpdate = true;
+// create a sprite from the texture
+var spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+var sprite = new THREE.Sprite( spriteMaterial );
+// set the size of the sprite
+sprite.scale.set(10,5,1);
+// add the sprite to the scene
+scene.add( sprite );
+// position the sprite in the scene
+sprite.position.set(0,0,1);
+
+
+//-------------------------------------------------------------------------
+// Menu1 RIGHTMENU
 var roundedBoxGeometry = new THREE.BoxGeometry( 25, 35, 1, 5, 1, 5 );
 var roundedBox = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial( { color: color, transparent:true, opacity:0.3 } ) );
 scene.add( roundedBox );
-roundedBox.position.set(27.5,-2,0);
+roundedBox.position.set(27.5,-2.5,0);
 
-
-
-//menu2
-var roundedBox2 = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial( { color: color, transparent:true, opacity:0.3 } ) );
-scene.add( roundedBox2 );
-roundedBox2.position.set(-27.5,-2,0);
-
-
-
-
-
-//Pole1
+// Pole1 RIGHTPOLE
 var poleGeometry = new THREE.CylinderGeometry(1,1,35,10,30);
 const poleMaterial = new THREE.MeshBasicMaterial({color:color, wireframe:true});
 const pole = new THREE.Mesh(poleGeometry,poleMaterial);
 scene.add( pole );
-pole.position.set(-40,-2,0);
+pole.position.set(-40,-2.5,0);
 
 
-//Pole2
+//-------------------------------------------------------------------------
+// Menu2 LEFTMENU
+var roundedBox2 = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial( { color: color, transparent:true, opacity:0.3 } ) );
+scene.add( roundedBox2 );
+roundedBox2.position.set(-27.5,-2.5,0);
 
+// Pole2 LEFTPOLE
 const pole2 = new THREE.Mesh(poleGeometry,poleMaterial);
 scene.add( pole2 );
-pole2.position.set(40,-2,0);
+pole2.position.set(40,-2.5,0);
 
-
-
+//-------------------------------------------------------------------------
 
 //TEXT TEMP
 
