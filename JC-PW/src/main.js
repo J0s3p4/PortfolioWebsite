@@ -130,7 +130,7 @@ var roundedBox = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial
 scene.add( roundedBox );
 roundedBox.position.set(0,20.5,0);
 
-// Name
+// NameImage Text
 var NameTitleTexture = new THREE.TextureLoader().load('/assets/textimages/NameText1000x200.png');
 const NameTitleGeometry = new THREE.PlaneGeometry(20, 4);   // width, height
 const NameTitleMaterial = new THREE.MeshBasicMaterial({ map: NameTitleTexture, transparent: true, });
@@ -157,7 +157,7 @@ const FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
 FaceImageMesh.position.set(26,8,1);
 scene.add(FaceImageMesh);
 
-// BioImage
+// BioImage Text
 var BioImageTexture = new THREE.TextureLoader().load('/assets/textimages/BioText2000x2000.png');
 const BioImageGeometry = new THREE.PlaneGeometry(20, 20);   // width, height
 const BioImageMaterial = new THREE.MeshBasicMaterial({ map: BioImageTexture, transparent: true, });
@@ -166,12 +166,29 @@ const BioImageMesh = new THREE.Mesh(BioImageGeometry, BioImageMaterial);
 BioImageMesh.position.set(26,-8,1);
 scene.add(BioImageMesh);
 
+// BioTitle Text
+var BioTitleTexture = new THREE.TextureLoader().load('/assets/textimages/BioTitleText1000x200.png');
+const BioTitleTextGeometry = new THREE.PlaneGeometry(15, 3);   // width, height
+const BioTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BioTitleTexture, transparent: true, });
+const BioTitleTextMesh = new THREE.Mesh(BioTitleTextGeometry, BioTitleTextMaterial);
+
+BioTitleTextMesh.position.set(23,13,1);
+scene.add(BioTitleTextMesh);
 
 //-------------------------------------------------------------------------
 // Menu2 LEFTMENU
 var roundedBox2 = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial( { color: color, transparent:true, opacity:0.3 } ) );
 scene.add( roundedBox2 );
 roundedBox2.position.set(-27.5,-2.5,0);
+
+// Projects Text
+var ProjectsTextTexture = new THREE.TextureLoader().load('/assets/textimages/ProjectsText1000x200.png');
+const ProjectsTextGeometry = new THREE.PlaneGeometry(15, 3);   // width, height
+const ProjectsTextMaterial = new THREE.MeshBasicMaterial({ map: ProjectsTextTexture, transparent: true, });
+const ProjectsTextMesh = new THREE.Mesh(ProjectsTextGeometry, ProjectsTextMaterial);
+
+ProjectsTextMesh.position.set(-29,13,1);
+scene.add(ProjectsTextMesh);
 
 //-------------------------------------------------------------------------
 
