@@ -92,7 +92,7 @@ scene.add(sphere)
 
 
 //SMOKE
-var smokeTexture = new THREE.TextureLoader().load('smoke.png');
+var smokeTexture = new THREE.TextureLoader().load('/assets/images/smoke.png');
 var smokeGeometry = new THREE.PlaneGeometry(200,200);
 var smokeMaterial = new THREE.MeshLambertMaterial({ map: smokeTexture, opacity: 0.6, transparent: true});
 var smokeParticles;
@@ -130,26 +130,7 @@ var roundedBox = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial
 scene.add( roundedBox );
 roundedBox.position.set(0,20.5,0);
 
-// create a canvas element
-var canvas = document.createElement('canvas');
-var context = canvas.getContext('2d');
-// set the font and style of the text
-context.font = "Bold 40px Arial";
-context.fillStyle = "rgba(255,255,255,0.95)";
-// draw the text onto the canvas
-context.fillText('JOSEPH CARLYLE', 0, 50);
-// create a texture from the canvas
-var texture = new THREE.Texture(canvas) 
-texture.needsUpdate = true;
-// create a sprite from the texture
-var spriteMaterial = new THREE.SpriteMaterial({ map: texture });
-var sprite = new THREE.Sprite( spriteMaterial );
-// set the size of the sprite
-sprite.scale.set(10,5,1);
-// add the sprite to the scene
-scene.add( sprite );
-// position the sprite in the scene
-sprite.position.set(0,0,1);
+
 
 
 //-------------------------------------------------------------------------
@@ -181,7 +162,7 @@ pole2.position.set(40,-2.5,0);
 //-------------------------------------------------------------------------
 
 //TEXT TEMP
-
+/*
 // create a canvas element
 var canvas = document.createElement('canvas');
 var context = canvas.getContext('2d');
@@ -223,7 +204,7 @@ sprite.scale.set(10,5,1);
 scene.add( sprite );
 // position the sprite in the scene
 sprite.position.set(-30,12,1);
-
+*/
 
 
 //temp orbital controls
