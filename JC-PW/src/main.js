@@ -146,12 +146,16 @@ var roundedBox = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial
 scene.add( roundedBox );
 roundedBox.position.set(27.5,-2.5,0);
 
-// Pole1 RIGHTPOLE
-var poleGeometry = new THREE.CylinderGeometry(1,1,35,10,30);
-const poleMaterial = new THREE.MeshBasicMaterial({color:color, wireframe:true});
-const pole = new THREE.Mesh(poleGeometry,poleMaterial);
-scene.add( pole );
-pole.position.set(-40,-2.5,0);
+
+
+// FaceImage
+var FaceImageTexture = new THREE.TextureLoader().load('/assets/images/Face.jpg');
+const FaceImageGeometry = new THREE.PlaneGeometry(10, 10);   // width, height
+const FaceImageMaterial = new THREE.MeshBasicMaterial({ map: FaceImageTexture});
+const FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
+
+FaceImageMesh.position.set(26,8,1);
+scene.add(FaceImageMesh);
 
 
 //-------------------------------------------------------------------------
@@ -159,6 +163,15 @@ pole.position.set(-40,-2.5,0);
 var roundedBox2 = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial( { color: color, transparent:true, opacity:0.3 } ) );
 scene.add( roundedBox2 );
 roundedBox2.position.set(-27.5,-2.5,0);
+
+//-------------------------------------------------------------------------
+
+// Pole1 LEFTPOLE
+var poleGeometry = new THREE.CylinderGeometry(1,1,35,10,30);
+const poleMaterial = new THREE.MeshBasicMaterial({color:color, wireframe:true});
+const pole = new THREE.Mesh(poleGeometry,poleMaterial);
+scene.add( pole );
+pole.position.set(-40,-2.5,0);
 
 // Pole2 LEFTPOLE
 const pole2 = new THREE.Mesh(poleGeometry,poleMaterial);
