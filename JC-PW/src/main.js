@@ -130,8 +130,14 @@ var roundedBox = new THREE.Mesh( roundedBoxGeometry, new THREE.MeshBasicMaterial
 scene.add( roundedBox );
 roundedBox.position.set(0,20.5,0);
 
+// Name
+var NameTitleTexture = new THREE.TextureLoader().load('/assets/textimages/NameText1000x200.png');
+const NameTitleGeometry = new THREE.PlaneGeometry(20, 4);   // width, height
+const NameTitleMaterial = new THREE.MeshBasicMaterial({ map: NameTitleTexture, transparent: true, });
+const NameTitleMesh = new THREE.Mesh(NameTitleGeometry, NameTitleMaterial);
 
-
+NameTitleMesh.position.set(0,19.5,1);
+scene.add(NameTitleMesh);
 
 //-------------------------------------------------------------------------
 // Menu1 RIGHTMENU
