@@ -60,6 +60,24 @@ const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
+//For MP3 Sound Test
+//--------------------------------------------
+const listener = new THREE.AudioListener();
+camera.add(listener);
+
+// 2. Create a global audio source
+const sound = new THREE.Audio(listener);
+
+// 3. Load the MP3 file
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load('assets/Deus Ex OST Main menu theme.mp3', function(buffer) {
+    sound.setBuffer(buffer);
+    sound.setLoop(true);      // or true
+    sound.setVolume(0.); //0.1
+    sound.play();           
+});
+//--------------------------------------------
+
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
@@ -154,7 +172,7 @@ const FaceImageGeometry = new THREE.PlaneGeometry(10, 10);   // width, height
 const FaceImageMaterial = new THREE.MeshBasicMaterial({ map: FaceImageTexture});
 const FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
 
-FaceImageMesh.position.set(26,8,1);
+FaceImageMesh.position.set(26,7,1);
 scene.add(FaceImageMesh);
 
 // BioImage Text
