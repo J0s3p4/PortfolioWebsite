@@ -109,6 +109,17 @@ export function setupObjects(scene, color) {
     ProjectsTextMesh.position.set(-29, 13, 1);
     scene.add(ProjectsTextMesh);
 
+    // --- Portfolio Project Buttons ---------------
+    var UnrealEngineTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnrealEngineText800x160.png');
+    const UnrealEngineTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+    const UnrealEngineTextMaterial = new THREE.MeshBasicMaterial({ map: UnrealEngineTextTexture, transparent: true, });
+    const UnrealEngineTextMesh = new THREE.Mesh(UnrealEngineTextGeometry, UnrealEngineTextMaterial);
+    UnrealEngineTextMesh.position.set(-30.5, 10, 1);
+    scene.add(UnrealEngineTextMesh);    
+
+
+
+
     // --- Poles ---
     var poleGeometry = new THREE.CylinderGeometry(1, 1, 35, 10, 30);
     const poleMaterial = new THREE.MeshBasicMaterial({ color: color, wireframe: true });
