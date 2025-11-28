@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
 import { loadAudio, sound } from './audio.js';
-import { torus1, torus2, sphere, pole, pole2, smokeParticles, setupObjects, NameTitleMesh} from './objects.js';
+import { torus1, torus2, sphere, pole, pole2, smokeParticles, setupObjects, NameTitleMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh,} from './objects.js';
 import { updateAnimation } from './animation.js';
 import { makeClickable, setupClickListener } from './interactivity.js';
 // --- Global Setup ---
@@ -39,14 +39,15 @@ function handleAllClicks(mesh) {
     console.log(`Clicked: ${meshName || mesh.uuid}`);
 
     switch (meshName) {
-        case 'Torus1': // Action for torus1
-            // Toggle visibility for the Torus
+        case 'NameTitle': // Action for NameTitle
             mesh.visible = !mesh.visible;
-            console.log('Torus visibility toggled.');
             break;
 
-        case 'NameTitle': // Action for NameTitle
-            // Change the Sphere's color randomly
+        case 'BeeAlgoBtn': // Action for NameTitle
+            mesh.visible = !mesh.visible;
+            break;
+        
+        case 'BearPitBtn': // Action for NameTitle
             mesh.visible = !mesh.visible;
             break;
 
@@ -59,8 +60,11 @@ function handleAllClicks(mesh) {
 }
 
 //DONT FORGET TO MAKE CLICKABLE
-makeClickable(torus1, handleAllClicks);
-makeClickable(NameTitleMesh, handleAllClicks); //this seems to be issue
+makeClickable(NameTitleMesh, handleAllClicks); 
+makeClickable(BeeAlgorithmSimTextMesh, handleAllClicks);
+
+makeClickable(BearPitTextMesh, handleAllClicks);
+
 
 // --- End of makeClickable calls ------------
 

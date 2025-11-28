@@ -3,7 +3,7 @@
 import * as THREE from 'three';
 
 // Exported Meshes (initialized later)
-export let torus1, torus2, sphere, pole, pole2, NameTitleMesh;
+export let torus1, torus2, sphere, pole, pole2, NameTitleMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh;
 export const smokeParticles = [];
 
 /**
@@ -120,20 +120,51 @@ export function setupObjects(scene, color) {
     scene.add(UnrealEngineTextMesh);    
 
         //Bee algorithm sim text
-        var BeeAlgorithmSimTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimText800x130.png');
+        const BeeAlgorithmSimTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimText800x130.png');
         const BeeAlgorithmSimTextGeometry = new THREE.PlaneGeometry(12, 2.4);
-        const BeeAlgorithmSimTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmSimTextTexture, transparent: true, });
-        const BeeAlgorithmSimTextMesh = new THREE.Mesh(BeeAlgorithmSimTextGeometry, BeeAlgorithmSimTextMaterial);
+        const BeeAlgorithmSimTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmSimTextTexture, 
+            transparent: true, 
+            side: THREE.DoubleSide, });
+        BeeAlgorithmSimTextMesh = new THREE.Mesh(BeeAlgorithmSimTextGeometry, BeeAlgorithmSimTextMaterial);
         BeeAlgorithmSimTextMesh.position.set(-30, 8, 1);
-        scene.add(BeeAlgorithmSimTextMesh);    
+        scene.add(BeeAlgorithmSimTextMesh);   
+
+        BeeAlgorithmSimTextMesh.name = 'BeeAlgoBtn';
+
 
         //BearPit text
-        var BearPitTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitText800x130.png');
+        const BearPitTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitText800x130.png');
         const BearPitTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const BearPitTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitTextTexture, transparent: true, });
-        const BearPitTextMesh = new THREE.Mesh(BearPitTextGeometry, BearPitTextMaterial);
+        BearPitTextMesh = new THREE.Mesh(BearPitTextGeometry, BearPitTextMaterial);
         BearPitTextMesh.position.set(-30, 6.25, 1);
         scene.add(BearPitTextMesh);    
+
+        BearPitTextMesh.name = 'BearPitBtn';
+
+    //Unity text
+    var UnityTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnityText800x160.png');
+    const UnityTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+    const UnityTextMaterial = new THREE.MeshBasicMaterial({ map: UnityTextTexture, transparent: true, });
+    const UnityTextMesh = new THREE.Mesh(UnityTextGeometry, UnityTextMaterial);
+    UnityTextMesh.position.set(-30.5, 4, 1);
+    scene.add(UnityTextMesh);       
+
+       //AR museum app sim text
+        var ARMuseumAppTextTexture = new THREE.TextureLoader().load('/assets/textimages/ARMuseumAppText800x130.png');
+        const ARMuseumAppTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+        const ARMuseumAppTextMaterial = new THREE.MeshBasicMaterial({ map: ARMuseumAppTextTexture, transparent: true, });
+        const ARMuseumAppTextMesh = new THREE.Mesh(ARMuseumAppTextGeometry, ARMuseumAppTextMaterial);
+        ARMuseumAppTextMesh.position.set(-30, 2, 1);
+        scene.add(ARMuseumAppTextMesh);    
+
+        //Theatrix VR text
+        var TheatrixVRTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixVRText800x130.png');
+        const TheatrixVRTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+        const TheatrixVRTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRTextTexture, transparent: true, });
+        const TheatrixVRTextMesh = new THREE.Mesh(TheatrixVRTextGeometry, TheatrixVRTextMaterial);
+        TheatrixVRTextMesh.position.set(-30, 0.25, 1);
+        scene.add(TheatrixVRTextMesh);  
 
 
     // --- Poles ---
