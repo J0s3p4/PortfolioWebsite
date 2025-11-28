@@ -13,8 +13,8 @@ import { torus1, torus2, sphere, pole, pole2, smokeParticles,
      NameTitleMesh, 
      BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
      BearPitTextMesh, BearPitTitleTextMesh,
-     ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh,
-     TheatrixVRTextMesh, TheatrixVRTitleTextMesh,
+     ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
+     TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
     } from './objects.js';
 
 
@@ -70,11 +70,11 @@ function handleAllClicks(mesh) {
             break;
 
         case 'ARMuseumAppBtn': // Action for ARMuseumApp btn
-            toggleCurrentlyShown([ARMuseumAppTitleTextMesh]);
+            toggleCurrentlyShown([ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh]);
             break;
 
         case 'TheatrixVRBtn': // Action for TheatrixVRBtn
-            toggleCurrentlyShown([TheatrixVRTitleTextMesh]);
+            toggleCurrentlyShown([TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh]);
             break;
 
 

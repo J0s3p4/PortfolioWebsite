@@ -8,8 +8,8 @@ NameTitleMesh,
 FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
 BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
 BearPitTextMesh, BearPitTitleTextMesh,
-ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, ARMuseumAppImageMesh,
-TheatrixVRTextMesh, TheatrixVRTitleTextMesh; 
+ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
+TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh; 
 
 export const smokeParticles = [];
 
@@ -202,8 +202,13 @@ export function setupObjects(scene, color) {
             ARMuseumAppTitleTextMesh.visible = false;   
 
                      // Ar museum app desc
-
-
+                        var MuseumARAppDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/MuseumARAppDescText2000x1400.png');
+                        const MuseumARAppDescTextGeometry = new THREE.PlaneGeometry(20, 14);
+                        const MuseumARAppDescTextMaterial = new THREE.MeshBasicMaterial({ map: MuseumARAppDescTextTexture, transparent: true, });
+                        MuseumARAppDescTextMesh = new THREE.Mesh(MuseumARAppDescTextGeometry, MuseumARAppDescTextMaterial);
+                        MuseumARAppDescTextMesh.position.set(26, 5, 1);
+                        scene.add(MuseumARAppDescTextMesh);
+                        MuseumARAppDescTextMesh.visible = false;         
 
 
 
@@ -227,6 +232,20 @@ export function setupObjects(scene, color) {
             TheatrixVRTitleTextMesh.position.set(26, 13, 1);
             scene.add(TheatrixVRTitleTextMesh);
             TheatrixVRTitleTextMesh.visible = false;   
+
+                    // Ar museum app desc
+                    var TheatrixVRDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixVRDescText2000x1400.png');
+                    const TheatrixVRDescTextGeometry = new THREE.PlaneGeometry(20, 14);
+                    const TheatrixVRDescTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRDescTextTexture, transparent: true, });
+                    TheatrixVRDescTextMesh = new THREE.Mesh(TheatrixVRDescTextGeometry, TheatrixVRDescTextMaterial);
+                    TheatrixVRDescTextMesh.position.set(26, 5, 1);
+                    scene.add(TheatrixVRDescTextMesh);
+                    TheatrixVRDescTextMesh.visible = false;  
+
+    // --- Link Text ---          
+
+
+
 
     // --- Poles ---
     var poleGeometry = new THREE.CylinderGeometry(1, 1, 35, 10, 30);
