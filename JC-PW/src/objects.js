@@ -110,6 +110,8 @@ export function setupObjects(scene, color) {
     scene.add(ProjectsTextMesh);
 
     // --- Portfolio Project Buttons ---------------
+
+    //UNREAL ENGINE text
     var UnrealEngineTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnrealEngineText800x160.png');
     const UnrealEngineTextGeometry = new THREE.PlaneGeometry(12, 2.4);
     const UnrealEngineTextMaterial = new THREE.MeshBasicMaterial({ map: UnrealEngineTextTexture, transparent: true, });
@@ -117,7 +119,21 @@ export function setupObjects(scene, color) {
     UnrealEngineTextMesh.position.set(-30.5, 10, 1);
     scene.add(UnrealEngineTextMesh);    
 
+        //Bee algorithm sim text
+        var BeeAlgorithmSimTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimText800x130.png');
+        const BeeAlgorithmSimTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+        const BeeAlgorithmSimTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmSimTextTexture, transparent: true, });
+        const BeeAlgorithmSimTextMesh = new THREE.Mesh(BeeAlgorithmSimTextGeometry, BeeAlgorithmSimTextMaterial);
+        BeeAlgorithmSimTextMesh.position.set(-30, 8, 1);
+        scene.add(BeeAlgorithmSimTextMesh);    
 
+        //BearPit text
+        var BearPitTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitText800x130.png');
+        const BearPitTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+        const BearPitTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitTextTexture, transparent: true, });
+        const BearPitTextMesh = new THREE.Mesh(BearPitTextGeometry, BearPitTextMaterial);
+        BearPitTextMesh.position.set(-30, 6.25, 1);
+        scene.add(BearPitTextMesh);    
 
 
     // --- Poles ---
