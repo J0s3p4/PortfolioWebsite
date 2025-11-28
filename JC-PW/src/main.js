@@ -12,9 +12,10 @@ import { torus1, torus2, sphere, pole, pole2, smokeParticles,
      setupObjects, 
      NameTitleMesh, 
      BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
-     BearPitTextMesh, BearPitTitleTextMesh,
+     BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh,
      ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
      TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
+     LinkTextMesh,
     } from './objects.js';
 
 
@@ -31,6 +32,9 @@ setupScene(color);
 
 // Add all objects to the scene
 setupObjects(scene, color);
+
+//Link for opening other pages
+var currentLink;
 
 var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh];
 
@@ -59,24 +63,32 @@ function handleAllClicks(mesh) {
     switch (meshName) {
         case 'NameTitle': // Action for NameTitle
             toggleCurrentlyShown([FaceImageMesh,BioImageMesh,BioTitleTextMesh]);
+            currentLink = "";
             break;
 
         case 'BeeAlgoBtn': // Action for Bee algo btn
-            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh]);
+            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, LinkTextMesh]);
+            currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7327398103840342017/";
             break;
         
         case 'BearPitBtn': // Action for BearPit btn
-            toggleCurrentlyShown([BearPitTitleTextMesh]);
+            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, LinkTextMesh]);
+            currentLink = "https://afirend.itch.io/bearpit"
             break;
 
         case 'ARMuseumAppBtn': // Action for ARMuseumApp btn
-            toggleCurrentlyShown([ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh]);
+            toggleCurrentlyShown([ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh, LinkTextMesh])
+            currentLink = "https://www.linkedin.com/posts/josephcarlyle_here-is-a-small-prototype-of-a-mobile-app-activity-7054878268495126528-U6_s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6chn4BOtPxhFgp6MeOJ1N5seTxsG1_ito";
             break;
 
         case 'TheatrixVRBtn': // Action for TheatrixVRBtn
-            toggleCurrentlyShown([TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh]);
+            toggleCurrentlyShown([TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh, LinkTextMesh]);
+             currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7028067059804557312/";
             break;
 
+        case 'Link': // Action for TheatrixVRBtn
+            window.open(currentLink, "_blank");;
+            break;
 
         default:
             // Optional: Action for any other clickable mesh without a specific case
@@ -92,6 +104,7 @@ makeClickable(BearPitTextMesh, handleAllClicks);
 makeClickable(ARMuseumAppTextMesh, handleAllClicks);
 makeClickable(TheatrixVRTextMesh, handleAllClicks);
 
+makeClickable(LinkTextMesh, handleAllClicks);
 // --- End of makeClickable calls ------------
 
 

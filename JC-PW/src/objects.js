@@ -7,9 +7,10 @@ export let torus1, torus2, sphere, pole, pole2,
 NameTitleMesh, 
 FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
 BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
-BearPitTextMesh, BearPitTitleTextMesh,
+BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, 
 ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
-TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh; 
+TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
+LinkTextMesh; 
 
 export const smokeParticles = [];
 
@@ -56,6 +57,7 @@ export function setupObjects(scene, color) {
         smokeParticles.push(smoke_element);
     }
 */
+
     // --- Top Menu Box & Text ------------------------------------------------
     var roundedBoxGeometry = new THREE.BoxGeometry(70, 5, 1, 5, 1, 5);
     var roundedBox = new THREE.Mesh(roundedBoxGeometry, new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.3 }));
@@ -171,6 +173,28 @@ export function setupObjects(scene, color) {
             BearPitTitleTextMesh.position.set(26, 13, 1);
             scene.add(BearPitTitleTextMesh);
             BearPitTitleTextMesh.visible = false;   
+                
+                   /*  // BearPitImage
+                    var BearPitImageTexture = new THREE.TextureLoader().load('/assets/images/BearPitCathedral.png');
+                    const BearPitImageGeometry = new THREE.PlaneGeometry(15, 10);
+                    const BearPitImageMaterial = new THREE.MeshBasicMaterial({ map: BearPitImageTexture });
+                    BearPitImageMaterial.color.set(0xbbbbbb); // slightly darken
+                    BearPitImageMesh = new THREE.Mesh(BearPitImageGeometry, BearPitImageMaterial);
+                    BearPitImageMesh.position.set(26, 6, 1);
+                    scene.add(BearPitImageMesh);
+                    BearPitImageMesh.visible = false;
+                 */
+
+                        // BearPit desc
+                        var BearPitDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitDescText2000x2000.png');
+                        const BearPitDescTextGeometry = new THREE.PlaneGeometry(20, 20);
+                        const BearPitDescTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitDescTextTexture, transparent: true, });
+                        BearPitDescTextMesh = new THREE.Mesh(BearPitDescTextGeometry, BearPitDescTextMaterial);
+                        BearPitDescTextMesh.position.set(26, 1, 1);
+                        scene.add(BearPitDescTextMesh);
+                        BearPitDescTextMesh.visible = false;   
+
+
 
     //Unity text
     var UnityTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnityText800x160.png');
@@ -206,7 +230,7 @@ export function setupObjects(scene, color) {
                         const MuseumARAppDescTextGeometry = new THREE.PlaneGeometry(20, 14);
                         const MuseumARAppDescTextMaterial = new THREE.MeshBasicMaterial({ map: MuseumARAppDescTextTexture, transparent: true, });
                         MuseumARAppDescTextMesh = new THREE.Mesh(MuseumARAppDescTextGeometry, MuseumARAppDescTextMaterial);
-                        MuseumARAppDescTextMesh.position.set(26, 5, 1);
+                        MuseumARAppDescTextMesh.position.set(26, 4, 1);
                         scene.add(MuseumARAppDescTextMesh);
                         MuseumARAppDescTextMesh.visible = false;         
 
@@ -238,14 +262,22 @@ export function setupObjects(scene, color) {
                     const TheatrixVRDescTextGeometry = new THREE.PlaneGeometry(20, 14);
                     const TheatrixVRDescTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRDescTextTexture, transparent: true, });
                     TheatrixVRDescTextMesh = new THREE.Mesh(TheatrixVRDescTextGeometry, TheatrixVRDescTextMaterial);
-                    TheatrixVRDescTextMesh.position.set(26, 5, 1);
+                    TheatrixVRDescTextMesh.position.set(26, 4, 1);
                     scene.add(TheatrixVRDescTextMesh);
                     TheatrixVRDescTextMesh.visible = false;  
 
     // --- Link Text ---          
+            var LinkTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinkText800x160.png');
+            const LinkTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+            const LinkTextMaterial = new THREE.MeshBasicMaterial({ map: LinkTextTexture, 
+                transparent: true, 
+                 });
+            LinkTextMesh = new THREE.Mesh(LinkTextGeometry, LinkTextMaterial);
+            LinkTextMesh.position.set(21.5, -17, 1);
+            scene.add(LinkTextMesh);
+            LinkTextMesh.visible = false;   
 
-
-
+            LinkTextMesh.name = 'Link';     
 
     // --- Poles ---
     var poleGeometry = new THREE.CylinderGeometry(1, 1, 35, 10, 30);
