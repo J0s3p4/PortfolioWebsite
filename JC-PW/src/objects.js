@@ -3,7 +3,7 @@
 import * as THREE from 'three';
 
 // Exported Meshes (initialized later)
-export let torus1, torus2, sphere, pole, pole2, NameTitleMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh;
+export let torus1, torus2, sphere, pole, pole2, NameTitleMesh, FaceImageMesh, BioImageMesh, BioTitleTextMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh;
 export const smokeParticles = [];
 
 /**
@@ -76,7 +76,7 @@ export function setupObjects(scene, color) {
     var FaceImageTexture = new THREE.TextureLoader().load('/assets/images/Face.jpg');
     const FaceImageGeometry = new THREE.PlaneGeometry(10, 10);
     const FaceImageMaterial = new THREE.MeshBasicMaterial({ map: FaceImageTexture });
-    const FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
+    FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
     FaceImageMesh.position.set(26, 7, 1);
     scene.add(FaceImageMesh);
 
@@ -84,14 +84,14 @@ export function setupObjects(scene, color) {
     var BioImageTexture = new THREE.TextureLoader().load('/assets/textimages/BioText2000x2000.png');
     const BioImageGeometry = new THREE.PlaneGeometry(20, 20);
     const BioImageMaterial = new THREE.MeshBasicMaterial({ map: BioImageTexture, transparent: true, });
-    const BioImageMesh = new THREE.Mesh(BioImageGeometry, BioImageMaterial);
+    BioImageMesh = new THREE.Mesh(BioImageGeometry, BioImageMaterial);
     BioImageMesh.position.set(26, -8, 1);
     scene.add(BioImageMesh);
 
     var BioTitleTexture = new THREE.TextureLoader().load('/assets/textimages/BioTitleText1000x200.png');
     const BioTitleTextGeometry = new THREE.PlaneGeometry(15, 3);
     const BioTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BioTitleTexture, transparent: true, });
-    const BioTitleTextMesh = new THREE.Mesh(BioTitleTextGeometry, BioTitleTextMaterial);
+    BioTitleTextMesh = new THREE.Mesh(BioTitleTextGeometry, BioTitleTextMaterial);
     BioTitleTextMesh.position.set(23, 13, 1);
     scene.add(BioTitleTextMesh);
 

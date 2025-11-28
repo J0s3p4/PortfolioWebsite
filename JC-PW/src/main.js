@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
 import { loadAudio, sound } from './audio.js';
-import { torus1, torus2, sphere, pole, pole2, smokeParticles, setupObjects, NameTitleMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh,} from './objects.js';
+import { torus1, torus2, sphere, pole, pole2, smokeParticles, FaceImageMesh, BioImageMesh, BioTitleTextMesh, setupObjects, NameTitleMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh,} from './objects.js';
 import { updateAnimation } from './animation.js';
 import { makeClickable, setupClickListener } from './interactivity.js';
 // --- Global Setup ---
@@ -21,14 +21,19 @@ setupScene(color);
 // Add all objects to the scene
 setupObjects(scene, color);
 
+var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh];
+
+function toggleCurrentlyShown(arrayToShow) {
+    currentlyShownMeshes.forEach(mesh => {
+        if (mesh) mesh.visible = !mesh.visible;
+    });
+    currentlyShownMeshes = arrayToShow;
+    arrayToShow.forEach(mesh => {
+        if (mesh) mesh.visible = !mesh.visible;
+    });
+}
 
 
-// --- Place the makeClickable calls here ---
-
-/**
- * Define the click handler function
- * This function will be triggered when a registered mesh is clicked.
- */
 /**
  * Single handler function that executes different actions 
  * based on the clicked mesh's name.
@@ -40,15 +45,15 @@ function handleAllClicks(mesh) {
 
     switch (meshName) {
         case 'NameTitle': // Action for NameTitle
-            mesh.visible = !mesh.visible;
+            toggleCurrentlyShown([FaceImageMesh,BioImageMesh,BioTitleTextMesh]);
             break;
 
         case 'BeeAlgoBtn': // Action for NameTitle
-            mesh.visible = !mesh.visible;
+            toggleCurrentlyShown([]);
             break;
         
         case 'BearPitBtn': // Action for NameTitle
-            mesh.visible = !mesh.visible;
+            toggleCurrentlyShown([]);
             break;
 
 
