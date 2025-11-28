@@ -6,7 +6,18 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
 import { loadAudio, sound } from './audio.js';
-import { torus1, torus2, sphere, pole, pole2, smokeParticles, FaceImageMesh, BioImageMesh, BioTitleTextMesh, setupObjects, NameTitleMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh,} from './objects.js';
+
+import { torus1, torus2, sphere, pole, pole2, smokeParticles,
+     FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
+     setupObjects, 
+     NameTitleMesh, 
+     BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
+     BearPitTextMesh, BearPitTitleTextMesh,
+     ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh,
+     TheatrixVRTextMesh, TheatrixVRTitleTextMesh,
+    } from './objects.js';
+
+
 import { updateAnimation } from './animation.js';
 import { makeClickable, setupClickListener } from './interactivity.js';
 // --- Global Setup ---
@@ -25,11 +36,13 @@ var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh];
 
 function toggleCurrentlyShown(arrayToShow) {
     currentlyShownMeshes.forEach(mesh => {
-        if (mesh) mesh.visible = !mesh.visible;
+        if (mesh) mesh.visible = false;
     });
+
     currentlyShownMeshes = arrayToShow;
+
     arrayToShow.forEach(mesh => {
-        if (mesh) mesh.visible = !mesh.visible;
+        if (mesh) mesh.visible = true;
     });
 }
 
@@ -48,12 +61,20 @@ function handleAllClicks(mesh) {
             toggleCurrentlyShown([FaceImageMesh,BioImageMesh,BioTitleTextMesh]);
             break;
 
-        case 'BeeAlgoBtn': // Action for NameTitle
-            toggleCurrentlyShown([]);
+        case 'BeeAlgoBtn': // Action for Bee algo btn
+            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh]);
             break;
         
-        case 'BearPitBtn': // Action for NameTitle
-            toggleCurrentlyShown([]);
+        case 'BearPitBtn': // Action for BearPit btn
+            toggleCurrentlyShown([BearPitTitleTextMesh]);
+            break;
+
+        case 'ARMuseumAppBtn': // Action for ARMuseumApp btn
+            toggleCurrentlyShown([ARMuseumAppTitleTextMesh]);
+            break;
+
+        case 'TheatrixVRBtn': // Action for TheatrixVRBtn
+            toggleCurrentlyShown([TheatrixVRTitleTextMesh]);
             break;
 
 
@@ -67,9 +88,9 @@ function handleAllClicks(mesh) {
 //DONT FORGET TO MAKE CLICKABLE
 makeClickable(NameTitleMesh, handleAllClicks); 
 makeClickable(BeeAlgorithmSimTextMesh, handleAllClicks);
-
 makeClickable(BearPitTextMesh, handleAllClicks);
-
+makeClickable(ARMuseumAppTextMesh, handleAllClicks);
+makeClickable(TheatrixVRTextMesh, handleAllClicks);
 
 // --- End of makeClickable calls ------------
 

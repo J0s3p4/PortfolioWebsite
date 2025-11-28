@@ -3,7 +3,14 @@
 import * as THREE from 'three';
 
 // Exported Meshes (initialized later)
-export let torus1, torus2, sphere, pole, pole2, NameTitleMesh, FaceImageMesh, BioImageMesh, BioTitleTextMesh, BeeAlgorithmSimTextMesh, BearPitTextMesh;
+export let torus1, torus2, sphere, pole, pole2, 
+NameTitleMesh, 
+FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
+BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
+BearPitTextMesh, BearPitTitleTextMesh,
+ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, ARMuseumAppImageMesh,
+TheatrixVRTextMesh, TheatrixVRTitleTextMesh; 
+
 export const smokeParticles = [];
 
 /**
@@ -88,6 +95,7 @@ export function setupObjects(scene, color) {
     BioImageMesh.position.set(26, -8, 1);
     scene.add(BioImageMesh);
 
+    //Bio title
     var BioTitleTexture = new THREE.TextureLoader().load('/assets/textimages/BioTitleText1000x200.png');
     const BioTitleTextGeometry = new THREE.PlaneGeometry(15, 3);
     const BioTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BioTitleTexture, transparent: true, });
@@ -131,6 +139,17 @@ export function setupObjects(scene, color) {
 
         BeeAlgorithmSimTextMesh.name = 'BeeAlgoBtn';
 
+            // Bee Algo Title Meshes 
+            var BeeAlgorithmSimTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimTitleText1400x200.png');
+            const BeeAlgorithmSimTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
+            const BeeAlgorithmSimTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmSimTitleTextTexture, 
+                transparent: true, 
+                 });
+            BeeAlgorithmSimTitleTextMesh = new THREE.Mesh(BeeAlgorithmSimTitleTextGeometry, BeeAlgorithmSimTitleTextMaterial);
+            BeeAlgorithmSimTitleTextMesh.position.set(26, 13, 1);
+            scene.add(BeeAlgorithmSimTitleTextMesh);
+            BeeAlgorithmSimTitleTextMesh.visible = false;     
+
 
         //BearPit text
         const BearPitTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitText800x130.png');
@@ -141,6 +160,17 @@ export function setupObjects(scene, color) {
         scene.add(BearPitTextMesh);    
 
         BearPitTextMesh.name = 'BearPitBtn';
+
+            // BearPit Title Meshes 
+            var BearPitTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitTitleText1400x200.png');
+            const BearPitTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
+            const BearPitTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitTitleTextTexture, 
+                transparent: true, 
+                 });
+            BearPitTitleTextMesh = new THREE.Mesh(BearPitTitleTextGeometry, BearPitTitleTextMaterial);
+            BearPitTitleTextMesh.position.set(26, 13, 1);
+            scene.add(BearPitTitleTextMesh);
+            BearPitTitleTextMesh.visible = false;   
 
     //Unity text
     var UnityTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnityText800x160.png');
@@ -154,18 +184,49 @@ export function setupObjects(scene, color) {
         var ARMuseumAppTextTexture = new THREE.TextureLoader().load('/assets/textimages/ARMuseumAppText800x130.png');
         const ARMuseumAppTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const ARMuseumAppTextMaterial = new THREE.MeshBasicMaterial({ map: ARMuseumAppTextTexture, transparent: true, });
-        const ARMuseumAppTextMesh = new THREE.Mesh(ARMuseumAppTextGeometry, ARMuseumAppTextMaterial);
+        ARMuseumAppTextMesh = new THREE.Mesh(ARMuseumAppTextGeometry, ARMuseumAppTextMaterial);
         ARMuseumAppTextMesh.position.set(-30, 2, 1);
         scene.add(ARMuseumAppTextMesh);    
+        
+        ARMuseumAppTextMesh.name = 'ARMuseumAppBtn';
+                 
+            // AR museum app title 
+            var ARMuseumAppTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/ARMuseumAppTitleText1400x200.png');
+            const ARMuseumAppTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
+            const ARMuseumAppTitleTextMaterial = new THREE.MeshBasicMaterial({ map: ARMuseumAppTitleTextTexture, 
+                transparent: true, 
+                 });
+            ARMuseumAppTitleTextMesh = new THREE.Mesh(ARMuseumAppTitleTextGeometry, ARMuseumAppTitleTextMaterial);
+            ARMuseumAppTitleTextMesh.position.set(26, 13, 1);
+            scene.add(ARMuseumAppTitleTextMesh);
+            ARMuseumAppTitleTextMesh.visible = false;   
+
+                     // Ar museum app desc
+
+
+
+
 
         //Theatrix VR text
         var TheatrixVRTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixVRText800x130.png');
         const TheatrixVRTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const TheatrixVRTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRTextTexture, transparent: true, });
-        const TheatrixVRTextMesh = new THREE.Mesh(TheatrixVRTextGeometry, TheatrixVRTextMaterial);
+        TheatrixVRTextMesh = new THREE.Mesh(TheatrixVRTextGeometry, TheatrixVRTextMaterial);
         TheatrixVRTextMesh.position.set(-30, 0.25, 1);
         scene.add(TheatrixVRTextMesh);  
 
+        TheatrixVRTextMesh.name = 'TheatrixVRBtn';
+
+            // Theatrix VR title
+            var TheatrixVRTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixTitleText1400x200.png');
+            const TheatrixVRTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
+            const TheatrixVRTitleTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRTitleTextTexture, 
+                transparent: true, 
+                 });
+            TheatrixVRTitleTextMesh = new THREE.Mesh(TheatrixVRTitleTextGeometry, TheatrixVRTitleTextMaterial);
+            TheatrixVRTitleTextMesh.position.set(26, 13, 1);
+            scene.add(TheatrixVRTitleTextMesh);
+            TheatrixVRTitleTextMesh.visible = false;   
 
     // --- Poles ---
     var poleGeometry = new THREE.CylinderGeometry(1, 1, 35, 10, 30);
