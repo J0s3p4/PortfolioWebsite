@@ -10,7 +10,9 @@ BeeAlgorithmSimTextMesh, BeeAlgorithmSimSelectedMesh, BeeAlgorithmSimTitleTextMe
 BearPitTextMesh, BearPitSelectedMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, 
 ARMuseumAppTextMesh, ARMuseumAppSelectedMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
 TheatrixVRTextMesh, TheatrixSelectedMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
-LinkTextMesh, YouTubeTextMesh; 
+LinkTextMesh, YouTubeTextMesh, 
+Date2023TextMesh, Date2025TextMesh,
+LinkedInTextMesh, GithubTextMesh; 
 
 export const smokeParticles = [];
 
@@ -328,31 +330,83 @@ export function setupObjects(scene, color) {
                     TheatrixVRDescTextMesh.visible = false;  
 
     // --- Link Text ---          
-            var LinkTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinkText800x160.png');
-            const LinkTextGeometry = new THREE.PlaneGeometry(12, 2.4);
-            const LinkTextMaterial = new THREE.MeshBasicMaterial({ map: LinkTextTexture, 
-                transparent: true, 
-                 });
-            LinkTextMesh = new THREE.Mesh(LinkTextGeometry, LinkTextMaterial);
-            LinkTextMesh.position.set(21.5, -17, 1);
-            scene.add(LinkTextMesh);
-            LinkTextMesh.visible = false;   
+    var LinkTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinkText800x160.png');
+    const LinkTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+    const LinkTextMaterial = new THREE.MeshBasicMaterial({ map: LinkTextTexture, 
+        transparent: true, 
+            });
+    LinkTextMesh = new THREE.Mesh(LinkTextGeometry, LinkTextMaterial);
+    LinkTextMesh.position.set(21.5, -17, 1);
+    scene.add(LinkTextMesh);
+    LinkTextMesh.visible = false;   
 
-            LinkTextMesh.name = 'Link';     
+    LinkTextMesh.name = 'Link';     
 
 
-        // --- YouTube Text ---          
-            var YouTubeTextTexture = new THREE.TextureLoader().load('/assets/textimages/YouTubeText800x160.png');
-            const YouTubeTextGeometry = new THREE.PlaneGeometry(12, 2.4);
-            const YouTubeTextMaterial = new THREE.MeshBasicMaterial({ map: YouTubeTextTexture, 
-                transparent: true, 
-                 });
-            YouTubeTextMesh = new THREE.Mesh(YouTubeTextGeometry, YouTubeTextMaterial);
-            YouTubeTextMesh.position.set(21.5, -15, 1);
-            scene.add(YouTubeTextMesh);
-            YouTubeTextMesh.visible = false;   
+    // --- YouTube Text ---          
+    var YouTubeTextTexture = new THREE.TextureLoader().load('/assets/textimages/YouTubeText800x160.png');
+    const YouTubeTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+    const YouTubeTextMaterial = new THREE.MeshBasicMaterial({ map: YouTubeTextTexture, 
+        transparent: true, 
+            });
+    YouTubeTextMesh = new THREE.Mesh(YouTubeTextGeometry, YouTubeTextMaterial);
+    YouTubeTextMesh.position.set(21.5, -15, 1);
+    scene.add(YouTubeTextMesh);
+    YouTubeTextMesh.visible = false;   
 
-            YouTubeTextMesh.name = 'YouTubeLink';   
+    YouTubeTextMesh.name = 'YouTubeLink';   
+
+    // --- Dates Text ---                
+    var Date2023TextTexture = new THREE.TextureLoader().load('/assets/textimages/Date2023Text320x160.png');
+    const Date2023TextGeometry = new THREE.PlaneGeometry(4.8, 2.4);
+    const Date2023TextMaterial = new THREE.MeshBasicMaterial({ map: Date2023TextTexture, 
+        transparent: true, 
+            });
+    Date2023TextMesh = new THREE.Mesh(Date2023TextGeometry, Date2023TextMaterial);
+    Date2023TextMesh.position.set(35, -17, 1);
+    scene.add(Date2023TextMesh);
+    Date2023TextMesh.visible = false;   
+
+    var Date2025TextTexture = new THREE.TextureLoader().load('/assets/textimages/Date2025Text320x160.png');
+    const Date2025TextGeometry = new THREE.PlaneGeometry(4.8, 2.4);
+    const Date2025TextMaterial = new THREE.MeshBasicMaterial({ map: Date2025TextTexture, 
+        transparent: true, 
+            });
+    Date2025TextMesh = new THREE.Mesh(Date2025TextGeometry, Date2025TextMaterial);
+    Date2025TextMesh.position.set(35, -17, 1);
+    scene.add(Date2025TextMesh);
+    Date2025TextMesh.visible = false;   
+
+
+
+    // ------- Links section Text --------
+    var LinksTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinksTitleText1000x200.png');
+    const LinksTitleTextGeometry = new THREE.PlaneGeometry(15, 3);
+    const LinksTitleTextMaterial = new THREE.MeshBasicMaterial({ map: LinksTitleTextTexture, transparent: true, });
+    const LinksTitleTextMesh = new THREE.Mesh(LinksTitleTextGeometry, LinksTitleTextMaterial);
+    LinksTitleTextMesh.position.set(-29, -12, 1);
+    scene.add(LinksTitleTextMesh);
+    
+        // LinkedIn btn
+        var LinkedInTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinkedInText800x130.png');
+        const LinkedInTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+        const LinkedInTextMaterial = new THREE.MeshBasicMaterial({ map: LinkedInTextTexture, transparent: true, });
+        LinkedInTextMesh = new THREE.Mesh(LinkedInTextGeometry, LinkedInTextMaterial);
+        LinkedInTextMesh.position.set(-30, -14.5, 1);
+        scene.add(LinkedInTextMesh);  
+
+        LinkedInTextMesh.name = 'LinkedInBtn';
+
+        // Github btn
+        var GithubTextTexture = new THREE.TextureLoader().load('/assets/textimages/GithubText800x130.png');
+        const GithubTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+        const GithubTextMaterial = new THREE.MeshBasicMaterial({ map: GithubTextTexture, transparent: true, });
+        GithubTextMesh = new THREE.Mesh(GithubTextGeometry, GithubTextMaterial);
+        GithubTextMesh.position.set(-30, -16.5, 1);
+        scene.add(GithubTextMesh);  
+
+        GithubTextMesh.name = 'GithubBtn';
+
 
     // --- Poles ---
     var poleGeometry = new THREE.CylinderGeometry(1, 1, 35, 10, 30);
@@ -366,12 +420,7 @@ export function setupObjects(scene, color) {
     pole2.position.set(40, -2.5, 0);
     scene.add(pole2);
 
-    // For the 
-        function flicker() {
-            flickerOn = !flickerOn;
-            material.map = flickerOn ? originalMap : null;
-            material.needsUpdate = true;
-        }
+ 
 
 
 }
