@@ -8,13 +8,13 @@ import { setupScene, scene, camera, renderer } from './sceneManager.js';
 import { loadAudio, sound } from './audio.js';
 
 import { torus1, torus2, sphere, pole, pole2, smokeParticles,
-     FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
+     FaceImageMesh, BioImageMesh, BioTitleTextMesh, NameTitleSelectedMesh,
      setupObjects, 
      NameTitleMesh, 
-     BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh, BeeAlgorithmDescTextMesh,
-     BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, 
-     ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
-     TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
+     BeeAlgorithmSimTextMesh, BeeAlgorithmSimSelectedMesh, BeeAlgorithmSimTitleTextMesh, BeeAlgorithmDescTextMesh,
+     BearPitTextMesh, BearPitSelectedMesh, BearPitTitleTextMesh, BearPitDescTextMesh, 
+     ARMuseumAppTextMesh, ARMuseumAppSelectedMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
+     TheatrixVRTextMesh, TheatrixSelectedMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
      LinkTextMesh, YouTubeTextMesh,
     } from './objects.js';
 
@@ -40,7 +40,7 @@ var currentYouTubeLink;
 var linkOpen = false;
 var YouTubeLinkOpen = false;
 
-var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh];
+var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh,NameTitleSelectedMesh];
 
 function toggleCurrentlyShown(arrayToShow) {
     currentlyShownMeshes.forEach(mesh => {
@@ -66,7 +66,7 @@ function handleAllClicks(mesh) {
 
     switch (meshName) {
         case 'NameTitle': // Action for NameTitle
-            toggleCurrentlyShown([FaceImageMesh,BioImageMesh,BioTitleTextMesh]);
+            toggleCurrentlyShown([FaceImageMesh,BioImageMesh,BioTitleTextMesh,NameTitleSelectedMesh]);
             currentLink = "";
             currentYouTubeLink = "";
             linkOpen = false;
@@ -74,7 +74,7 @@ function handleAllClicks(mesh) {
             break;
 
         case 'BeeAlgoBtn': // Action for Bee algo btn
-            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, BeeAlgorithmDescTextMesh, LinkTextMesh,  YouTubeTextMesh]);
+            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, BeeAlgorithmSimSelectedMesh, BeeAlgorithmDescTextMesh, LinkTextMesh,  YouTubeTextMesh]);
             currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7327398103840342017/";
             currentYouTubeLink = "https://www.youtube.com/@JosephCarlyle";
             linkOpen = true;
@@ -82,7 +82,7 @@ function handleAllClicks(mesh) {
             break;
         
         case 'BearPitBtn': // Action for BearPit btn
-            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitDescTextMesh, LinkTextMesh, YouTubeTextMesh]);
+            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitSelectedMesh, BearPitDescTextMesh, LinkTextMesh, YouTubeTextMesh]);
             currentLink = "https://afirend.itch.io/bearpit"
             currentYouTubeLink = "https://www.youtube.com/@A.Firend";
             linkOpen = true;
@@ -90,7 +90,7 @@ function handleAllClicks(mesh) {
             break;
 
         case 'ARMuseumAppBtn': // Action for ARMuseumApp btn
-            toggleCurrentlyShown([ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh, LinkTextMesh])
+            toggleCurrentlyShown([ARMuseumAppTitleTextMesh, ARMuseumAppSelectedMesh, MuseumARAppDescTextMesh, LinkTextMesh])
             currentLink = "https://www.linkedin.com/posts/josephcarlyle_here-is-a-small-prototype-of-a-mobile-app-activity-7054878268495126528-U6_s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6chn4BOtPxhFgp6MeOJ1N5seTxsG1_ito";
             currentYouTubeLink = "";
             linkOpen = true;
@@ -98,7 +98,7 @@ function handleAllClicks(mesh) {
             break;
 
         case 'TheatrixVRBtn': // Action for TheatrixVRBtn
-            toggleCurrentlyShown([TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh, LinkTextMesh]);
+            toggleCurrentlyShown([TheatrixVRTitleTextMesh, TheatrixSelectedMesh, TheatrixVRDescTextMesh, LinkTextMesh]);
             currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7028067059804557312/";
             currentYouTubeLink = "";
             linkOpen = true;
