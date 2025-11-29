@@ -4,7 +4,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js';
 
 // when commented out causes white border
- import '/style.css';
+// import '/style.css';
 
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
