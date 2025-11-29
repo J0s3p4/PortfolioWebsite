@@ -1,6 +1,6 @@
 // interactivity.js
 
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js';
 
 // Initialize core components once
 const raycaster = new THREE.Raycaster();

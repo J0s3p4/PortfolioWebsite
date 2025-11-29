@@ -1,6 +1,6 @@
 // audio.js
 
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js';
 /*
 const listener = new THREE.AudioListener();
 const sound = new THREE.Audio(listener);

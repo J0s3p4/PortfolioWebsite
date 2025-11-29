@@ -1,6 +1,6 @@
 //objects.js
 
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js';
 
 // Exported Meshes (initialized later)
 export let torus1, torus2, sphere, pole, pole2, 
