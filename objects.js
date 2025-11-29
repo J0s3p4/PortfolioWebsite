@@ -73,7 +73,7 @@ export function setupObjects(scene, color) {
     scene.add(rightMenuBox);
 
     // FaceImage
-    var FaceImageTexture = new THREE.TextureLoader().load('PortfolioWebsite/public/assets/images/Face.jpg');
+    var FaceImageTexture = new THREE.TextureLoader().load('/assets/images/Face.jpg');
     const FaceImageGeometry = new THREE.PlaneGeometry(10, 10);
     const FaceImageMaterial = new THREE.MeshBasicMaterial({ map: FaceImageTexture });
     FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
