@@ -14,8 +14,8 @@ LinkTextMesh, YouTubeTextMesh,
 Date2023TextMesh, Date2025TextMesh,
 LinkedInTextMesh, GithubTextMesh; 
 
-export const smokeParticles = [];
 
+// Creates and adds all 3d objects to the scene
 export function setupObjects(scene, color) {
 
     // --- Tori ---
@@ -193,18 +193,6 @@ export function setupObjects(scene, color) {
             BearPitTitleTextMesh.position.set(26, 13, 1);
             scene.add(BearPitTitleTextMesh);
             BearPitTitleTextMesh.visible = false;   
-                
-            
-                   /*  // BearPitImage
-                    var BearPitImageTexture = new THREE.TextureLoader().load('/assets/images/BearPitCathedral.png');
-                    const BearPitImageGeometry = new THREE.PlaneGeometry(15, 10);
-                    const BearPitImageMaterial = new THREE.MeshBasicMaterial({ map: BearPitImageTexture });
-                    BearPitImageMaterial.color.set(0xbbbbbb); // slightly darken
-                    BearPitImageMesh = new THREE.Mesh(BearPitImageGeometry, BearPitImageMaterial);
-                    BearPitImageMesh.position.set(26, 6, 1);
-                    scene.add(BearPitImageMesh);
-                    BearPitImageMesh.visible = false;
-                 */
 
                         // BearPit desc
                         var BearPitDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitDescText2000x2000.png');
