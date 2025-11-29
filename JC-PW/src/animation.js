@@ -1,16 +1,8 @@
 //animation.js
 
-/**
- * Updates the rotation and movement of all animated objects.
- * @param {number} delta - The time elapsed since the last frame (from THREE.Clock).
- * @param {THREE.Mesh} torus1
- * @param {THREE.Mesh} torus2
- * @param {THREE.Mesh} sphere
- * @param {THREE.Mesh} pole
- * @param {THREE.Mesh} pole2
- * @param {THREE.Mesh[]} smokeParticles - Array of smoke meshes.
- */
-export function updateAnimation(delta, torus1, torus2, sphere, pole, pole2, smokeParticles) {
+
+// All of the rotation animations in the scene
+export function updateAnimation(delta, torus1, torus2, sphere, pole, pole2) {
     torus1.rotation.x += 0.008;
     torus1.rotation.y += 0.004;
     torus1.rotation.z += 0.008;
@@ -24,8 +16,5 @@ export function updateAnimation(delta, torus1, torus2, sphere, pole, pole2, smok
     pole.rotation.y += 0.005;
     pole2.rotation.y -= 0.005;
 
-    // Smoke animation
-    for (var i = 0; i < smokeParticles.length; i++) {
-        smokeParticles[i].rotation.z += (delta * 0.025);
-    }
 }
+

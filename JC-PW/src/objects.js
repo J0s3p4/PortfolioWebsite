@@ -16,11 +16,6 @@ LinkedInTextMesh, GithubTextMesh;
 
 export const smokeParticles = [];
 
-/**
- * Creates and adds all 3D objects to the scene.
- * @param {THREE.Scene} scene - The main Three.js scene.
- * @param {number} color - The primary accent color.
- */
 export function setupObjects(scene, color) {
 
     // --- Tori ---
@@ -43,26 +38,7 @@ export function setupObjects(scene, color) {
     scene.add(sphere);
   
 
-    /*
-    // --- SMOKE Particles ---
-    var smokeTexture = new THREE.TextureLoader().load('/assets/images/smoke.png');
-    var smokeGeometry = new THREE.PlaneGeometry(200, 200);
-    var smokeMaterial = new THREE.MeshLambertMaterial({ map: smokeTexture, opacity: 0.6, transparent: true });
-
-    for (var i = 0; i < 5; i++) {
-        var smoke_element = new THREE.Mesh(smokeGeometry, smokeMaterial);
-        smoke_element.scale.set(2, 2, 2);
-        smoke_element.position.set(Math.random() * 200 - 100, Math.random() * 200 - 300, Math.random() * 200 - 100);
-        smoke_element.rotation.z = Math.random() * 360;
-
-        scene.add(smoke_element);
-        smokeParticles.push(smoke_element);
-    }
-*/
-
-
     // Project Selected Texture "<"
-
     var ProjectSelectedTexture = new THREE.TextureLoader().load('/assets/textimages/SubTitle2Selected65x130.png');
 
     // --- Top Menu Box & Text ------------------------------------------------

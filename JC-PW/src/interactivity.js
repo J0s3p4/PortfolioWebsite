@@ -9,21 +9,16 @@ const mouse = new THREE.Vector2();
 // A map to store meshes and their associated click handlers
 const clickableObjects = new Map();
 
-/**
- * 1. Stores a mesh and its corresponding callback function.
- * Any mesh registered here will be checked by the click listener.
- * @param {THREE.Mesh} mesh - The object to make clickable.
- * @param {Function} callback - The function to execute when the mesh is clicked.
- */
+
+// Stores a mesh and its corresponding callback function.
+// Any mesh registered here will be checked by the click listener.
 export function makeClickable(mesh, callback) {
     clickableObjects.set(mesh, callback);
 }
 
-/**
- * 2. Sets up the primary click listener on the DOM element (canvas).
- * @param {THREE.Camera} camera - The scene camera.
- * @param {HTMLElement} domElement - The canvas or element to attach the listener to.
- */
+
+ // Sets up the primary click listener on the DOM element (canvas).
+
 export function setupClickListener(camera, domElement) {
     domElement.addEventListener('click', (event) => {
         // Calculate mouse position in normalized device coordinates (-1 to +1)

@@ -1,14 +1,11 @@
 // audio.js
 
 import * as THREE from 'three';
-
+/*
 const listener = new THREE.AudioListener();
 const sound = new THREE.Audio(listener);
 
-/**
- * Loads and plays the background audio.
- * @param {THREE.Camera} camera - The main camera to attach the listener to.
- */
+
 export function loadAudio(camera) {
     camera.add(listener);
 
@@ -22,3 +19,4 @@ export function loadAudio(camera) {
 }
 
 export { sound };
+*/

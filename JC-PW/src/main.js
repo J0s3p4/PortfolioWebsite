@@ -5,9 +5,9 @@ import './style.css';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
-import { loadAudio, sound } from './audio.js';
+// import { loadAudio, sound } from './audio.js';
 
-import { torus1, torus2, sphere, pole, pole2, smokeParticles,
+import { torus1, torus2, sphere, pole, pole2,
      FaceImageMesh, BioImageMesh, BioTitleTextMesh, NameTitleSelectedMesh,
      setupObjects, 
      NameTitleMesh, 
@@ -44,6 +44,7 @@ var YouTubeLinkOpen = false;
 
 var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh,NameTitleSelectedMesh];
 
+// Toggles currently shown meshes
 function toggleCurrentlyShown(arrayToShow) {
     currentlyShownMeshes.forEach(mesh => {
         if (mesh) mesh.visible = false;
@@ -57,11 +58,8 @@ function toggleCurrentlyShown(arrayToShow) {
 }
 
 
-/**
- * Single handler function that executes different actions 
- * based on the clicked mesh's name.
- * @param {THREE.Mesh} mesh - The mesh that was clicked.
- */
+
+ // handler function for each named clickable object
 function handleAllClicks(mesh) {
     const meshName = mesh.name;
     console.log(`Clicked: ${meshName || mesh.uuid}`);
@@ -129,6 +127,8 @@ function handleAllClicks(mesh) {
 }
 
 //DONT FORGET TO MAKE CLICKABLE
+
+// -------- makeClickable calls ------------
 makeClickable(NameTitleMesh, handleAllClicks); 
 makeClickable(BeeAlgorithmSimTextMesh, handleAllClicks);
 makeClickable(BearPitTextMesh, handleAllClicks);
@@ -140,17 +140,15 @@ makeClickable(YouTubeTextMesh, handleAllClicks);
 
 makeClickable(LinkedInTextMesh, handleAllClicks);
 makeClickable(GithubTextMesh, handleAllClicks);
-// --- End of makeClickable calls ------------
-
 
 
 // Initialize click listener for interactivity
 setupClickListener(camera, renderer.domElement);
 
 // Load and start the background audio
-loadAudio(camera);
+//loadAudio(camera);
 
-    // Temp orbital controls setup
+// Temp orbital controls setup
 //const controls = new OrbitControls(camera, renderer.domElement);
 //controls.enableDamping = true; // Use damping for smoother controls
 
@@ -161,7 +159,7 @@ function animate() {
 
     // Update object rotations
     const delta = clock.getDelta();
-    updateAnimation(delta, torus1, torus2, sphere, pole, pole2, smokeParticles);
+    updateAnimation(delta, torus1, torus2, sphere, pole, pole2);
 
     // Update orbital controls
   //  controls.update();
