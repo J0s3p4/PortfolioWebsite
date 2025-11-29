@@ -58,6 +58,11 @@ export function setupObjects(scene, color) {
     }
 */
 
+
+    // Project Selected Texture "<"
+
+    var ProjectSelectedTexture = new THREE.TextureLoader().load('/assets/textimages/SubTitle2Selected65x130.png');
+
     // --- Top Menu Box & Text ------------------------------------------------
     var roundedBoxGeometry = new THREE.BoxGeometry(70, 5, 1, 5, 1, 5);
     var roundedBox = new THREE.Mesh(roundedBoxGeometry, new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.3 }));
@@ -75,9 +80,8 @@ export function setupObjects(scene, color) {
 
     NameTitleMesh.name = 'NameTitle';
 
-            const NameTitleSelectedTexture = new THREE.TextureLoader().load('/assets/textimages/NameTitleSelected100x200.png');
             const NameTitleSelectedGeometry = new THREE.PlaneGeometry(2, 4);
-            const NameTitleSelectedMaterial = new THREE.MeshBasicMaterial({ map: NameTitleSelectedTexture, 
+            const NameTitleSelectedMaterial = new THREE.MeshBasicMaterial({ map: ProjectSelectedTexture, 
                 transparent: true, });
             NameTitleSelectedMesh = new THREE.Mesh(NameTitleSelectedGeometry, NameTitleSelectedMaterial);
             NameTitleSelectedMesh.position.set(12, 19.5, 1);
@@ -129,8 +133,6 @@ export function setupObjects(scene, color) {
     scene.add(ProjectsTextMesh);
 
     // --- Portfolio Project Buttons ---------------
-
-    const ProjectSelectedTexture = new THREE.TextureLoader().load('/assets/textimages/SubTitle2Selected65x130.png');
 
     //UNREAL ENGINE text
     var UnrealEngineTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnrealEngineText800x160.png');
@@ -363,4 +365,13 @@ export function setupObjects(scene, color) {
     pole2 = new THREE.Mesh(poleGeometry, poleMaterial);
     pole2.position.set(40, -2.5, 0);
     scene.add(pole2);
+
+    // For the 
+        function flicker() {
+            flickerOn = !flickerOn;
+            material.map = flickerOn ? originalMap : null;
+            material.needsUpdate = true;
+        }
+
+
 }
