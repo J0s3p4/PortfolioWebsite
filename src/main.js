@@ -2,7 +2,7 @@
 
 import * as THREE from 'three';
 import './style.css';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
 // Import { loadAudio, sound } from './audio.js';
