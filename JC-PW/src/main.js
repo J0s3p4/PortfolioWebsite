@@ -15,7 +15,7 @@ import { torus1, torus2, sphere, pole, pole2, smokeParticles,
      BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh,
      ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
      TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
-     LinkTextMesh,
+     LinkTextMesh, YouTubeTextMesh,
     } from './objects.js';
 
 
@@ -35,6 +35,10 @@ setupObjects(scene, color);
 
 //Link for opening other pages
 var currentLink;
+var currentYouTubeLink;
+
+var linkOpen = false;
+var YouTubeLinkOpen = false;
 
 var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh];
 
@@ -64,30 +68,53 @@ function handleAllClicks(mesh) {
         case 'NameTitle': // Action for NameTitle
             toggleCurrentlyShown([FaceImageMesh,BioImageMesh,BioTitleTextMesh]);
             currentLink = "";
+            currentYouTubeLink = "";
+            linkOpen = false;
+            YouTubeLinkOpen = false;
             break;
 
         case 'BeeAlgoBtn': // Action for Bee algo btn
-            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, LinkTextMesh]);
+            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, LinkTextMesh, YouTubeTextMesh]);
             currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7327398103840342017/";
+            currentYouTubeLink = "https://www.youtube.com/@JosephCarlyle";
+            linkOpen = true;
+            YouTubeLinkOpen = true;
             break;
         
         case 'BearPitBtn': // Action for BearPit btn
-            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, LinkTextMesh]);
+            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, LinkTextMesh, YouTubeTextMesh]);
             currentLink = "https://afirend.itch.io/bearpit"
+            currentYouTubeLink = "https://www.youtube.com/@A.Firend";
+            linkOpen = true;
+            YouTubeLinkOpen = true;
             break;
 
         case 'ARMuseumAppBtn': // Action for ARMuseumApp btn
             toggleCurrentlyShown([ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh, LinkTextMesh])
             currentLink = "https://www.linkedin.com/posts/josephcarlyle_here-is-a-small-prototype-of-a-mobile-app-activity-7054878268495126528-U6_s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6chn4BOtPxhFgp6MeOJ1N5seTxsG1_ito";
+            currentYouTubeLink = "";
+            linkOpen = true;
+            YouTubeLinkOpen = false;
             break;
 
         case 'TheatrixVRBtn': // Action for TheatrixVRBtn
             toggleCurrentlyShown([TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh, LinkTextMesh]);
-             currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7028067059804557312/";
+            currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7028067059804557312/";
+            currentYouTubeLink = "";
+            linkOpen = true;
+            YouTubeLinkOpen = false;
             break;
 
-        case 'Link': // Action for TheatrixVRBtn
+        case 'Link': // Action for Link
+        if (linkOpen == true) {
             window.open(currentLink, "_blank");;
+        } 
+            break;
+
+        case 'YouTubeLink': // Action for YouTubeLink
+        if (YouTubeLinkOpen == true) {
+            window.open(currentYouTubeLink, "_blank");;
+        }
             break;
 
         default:
@@ -105,6 +132,7 @@ makeClickable(ARMuseumAppTextMesh, handleAllClicks);
 makeClickable(TheatrixVRTextMesh, handleAllClicks);
 
 makeClickable(LinkTextMesh, handleAllClicks);
+makeClickable(YouTubeTextMesh, handleAllClicks);
 // --- End of makeClickable calls ------------
 
 

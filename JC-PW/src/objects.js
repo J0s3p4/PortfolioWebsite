@@ -10,7 +10,7 @@ BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
 BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, 
 ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
 TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
-LinkTextMesh; 
+LinkTextMesh, YouTubeTextMesh; 
 
 export const smokeParticles = [];
 
@@ -278,6 +278,20 @@ export function setupObjects(scene, color) {
             LinkTextMesh.visible = false;   
 
             LinkTextMesh.name = 'Link';     
+
+
+        // --- YouTube Text ---          
+            var YouTubeTextTexture = new THREE.TextureLoader().load('/assets/textimages/YouTubeText800x160.png');
+            const YouTubeTextGeometry = new THREE.PlaneGeometry(12, 2.4);
+            const YouTubeTextMaterial = new THREE.MeshBasicMaterial({ map: YouTubeTextTexture, 
+                transparent: true, 
+                 });
+            YouTubeTextMesh = new THREE.Mesh(YouTubeTextGeometry, YouTubeTextMaterial);
+            YouTubeTextMesh.position.set(21.5, -15, 1);
+            scene.add(YouTubeTextMesh);
+            YouTubeTextMesh.visible = false;   
+
+            YouTubeTextMesh.name = 'YouTubeLink';   
 
     // --- Poles ---
     var poleGeometry = new THREE.CylinderGeometry(1, 1, 35, 10, 30);
