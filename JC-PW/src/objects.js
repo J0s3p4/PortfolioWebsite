@@ -6,7 +6,7 @@ import * as THREE from 'three';
 export let torus1, torus2, sphere, pole, pole2, 
 NameTitleMesh, 
 FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
-BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
+BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh, BeeAlgorithmDescTextMesh,
 BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, 
 ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
 TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
@@ -152,7 +152,16 @@ export function setupObjects(scene, color) {
             scene.add(BeeAlgorithmSimTitleTextMesh);
             BeeAlgorithmSimTitleTextMesh.visible = false;     
 
+                        // Bee Algo desc
+                        var BeeAlgorithmDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimDescText2000x2000.png');
+                        const BeeAlgorithmDescTextGeometry = new THREE.PlaneGeometry(20, 20);
+                        const BeeAlgorithmDescTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmDescTextTexture, transparent: true, });
+                        BeeAlgorithmDescTextMesh = new THREE.Mesh(BeeAlgorithmDescTextGeometry, BeeAlgorithmDescTextMaterial);
+                        BeeAlgorithmDescTextMesh.position.set(26, 1, 1);
+                        scene.add(BeeAlgorithmDescTextMesh);
+                        BeeAlgorithmDescTextMesh.visible = false;   
 
+                 
         //BearPit text
         const BearPitTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitText800x130.png');
         const BearPitTextGeometry = new THREE.PlaneGeometry(12, 2.4);

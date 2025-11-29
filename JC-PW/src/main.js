@@ -11,8 +11,8 @@ import { torus1, torus2, sphere, pole, pole2, smokeParticles,
      FaceImageMesh, BioImageMesh, BioTitleTextMesh, 
      setupObjects, 
      NameTitleMesh, 
-     BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh,
-     BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh,
+     BeeAlgorithmSimTextMesh, BeeAlgorithmSimTitleTextMesh, BeeAlgorithmDescTextMesh,
+     BearPitTextMesh, BearPitTitleTextMesh, BearPitDescTextMesh, 
      ARMuseumAppTextMesh, ARMuseumAppTitleTextMesh, MuseumARAppDescTextMesh,
      TheatrixVRTextMesh, TheatrixVRTitleTextMesh, TheatrixVRDescTextMesh,
      LinkTextMesh, YouTubeTextMesh,
@@ -74,7 +74,7 @@ function handleAllClicks(mesh) {
             break;
 
         case 'BeeAlgoBtn': // Action for Bee algo btn
-            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, LinkTextMesh, YouTubeTextMesh]);
+            toggleCurrentlyShown([BeeAlgorithmSimTitleTextMesh, BeeAlgorithmDescTextMesh, LinkTextMesh,  YouTubeTextMesh]);
             currentLink = "https://www.linkedin.com/feed/update/urn:li:activity:7327398103840342017/";
             currentYouTubeLink = "https://www.youtube.com/@JosephCarlyle";
             linkOpen = true;
@@ -82,7 +82,7 @@ function handleAllClicks(mesh) {
             break;
         
         case 'BearPitBtn': // Action for BearPit btn
-            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitDescTextMesh, BearPitImageMesh, LinkTextMesh, YouTubeTextMesh]);
+            toggleCurrentlyShown([BearPitTitleTextMesh, BearPitDescTextMesh, LinkTextMesh, YouTubeTextMesh]);
             currentLink = "https://afirend.itch.io/bearpit"
             currentYouTubeLink = "https://www.youtube.com/@A.Firend";
             linkOpen = true;
