@@ -5,8 +5,9 @@ import './style.css';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { setupScene, scene, camera, renderer } from './sceneManager.js';
-// import { loadAudio, sound } from './audio.js';
+// Import { loadAudio, sound } from './audio.js';
 
+// Import animated and clickable meshes from objects.js
 import { torus1, torus2, sphere, pole, pole2,
      FaceImageMesh, BioImageMesh, BioTitleTextMesh, NameTitleSelectedMesh,
      setupObjects, 
@@ -35,13 +36,15 @@ setupScene(color);
 // Add all objects to the scene
 setupObjects(scene, color);
 
-//Link for opening other pages
+// Link for opening other pages
 var currentLink;
 var currentYouTubeLink;
 
+// Only some desc pages have links
 var linkOpen = false;
 var YouTubeLinkOpen = false;
 
+// Default page is the Bio
 var currentlyShownMeshes = [FaceImageMesh,BioImageMesh,BioTitleTextMesh,NameTitleSelectedMesh];
 
 // Toggles currently shown meshes
@@ -111,16 +114,16 @@ function handleAllClicks(mesh) {
         } 
             break;
 
-        case 'LinkedInBtn': // Action for YouTubeLink
+        case 'LinkedInBtn': // Action for LinkedIn Link
             window.open("https://www.linkedin.com/in/josephcarlyle/", "_blank");;
             break;
 
-        case 'GithubBtn': // Action for YouTubeLink
+        case 'GithubBtn': // Action for GitHub Link
             window.open("https://github.com/J0s3p4", "_blank");;
             break;
 
         default:
-            // Optional: Action for any other clickable mesh without a specific case
+            // For clickable mesh without a specific case
             console.log(`No specific case defined for ${meshName}.`);
             break;
     }
