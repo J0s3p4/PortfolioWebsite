@@ -14,7 +14,7 @@ LinkTextMesh, YouTubeTextMesh,
 Date2023TextMesh, Date2025TextMesh,
 LinkedInTextMesh, GithubTextMesh; 
 
-import ImportedFaceImagetexture from '/assets/images/Face.jpg';
+import ImportedFaceImagetexture from '/public/assets/images/Face.jpg';
 
 // Creates and adds all 3d objects to the scene
 export function setupObjects(scene, color) {
