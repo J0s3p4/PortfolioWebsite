@@ -39,7 +39,7 @@ export function setupObjects(scene, color) {
   
 
     // Project Selected Texture "<"
-    var ProjectSelectedTexture = new THREE.TextureLoader().load('/assets/textimages/SubTitle2Selected65x130.png');
+    var ProjectSelectedTexture = new THREE.TextureLoader().load('./assets/textimages/SubTitle2Selected65x130.png');
 
     // --- Top Menu Box & Text ------------------------------------------------
     var roundedBoxGeometry = new THREE.BoxGeometry(70, 5, 1, 5, 1, 5);
@@ -47,7 +47,7 @@ export function setupObjects(scene, color) {
     roundedBox.position.set(0, 20.5, 0);
     scene.add(roundedBox);
 
-    const NameTitleTexture = new THREE.TextureLoader().load('/assets/textimages/NameText1000x200.png');
+    const NameTitleTexture = new THREE.TextureLoader().load('./assets/textimages/NameText1000x200.png');
     const NameTitleGeometry = new THREE.PlaneGeometry(20, 4);
     const NameTitleMaterial = new THREE.MeshBasicMaterial({ map: NameTitleTexture, 
         transparent: true,
@@ -73,7 +73,7 @@ export function setupObjects(scene, color) {
     scene.add(rightMenuBox);
 
     // FaceImage
-    var FaceImageTexture = new THREE.TextureLoader().load('/assets/images/Face.jpg');
+    var FaceImageTexture = new THREE.TextureLoader().load('./assets/images/Face.jpg');
     const FaceImageGeometry = new THREE.PlaneGeometry(10, 10);
     const FaceImageMaterial = new THREE.MeshBasicMaterial({ map: FaceImageTexture });
     FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
@@ -81,7 +81,7 @@ export function setupObjects(scene, color) {
     scene.add(FaceImageMesh);
 
     // Bio Text/Title Meshes 
-    var BioImageTexture = new THREE.TextureLoader().load('/assets/textimages/BioText2000x2000.png');
+    var BioImageTexture = new THREE.TextureLoader().load('./assets/textimages/BioText2000x2000.png');
     const BioImageGeometry = new THREE.PlaneGeometry(20, 20);
     const BioImageMaterial = new THREE.MeshBasicMaterial({ map: BioImageTexture, transparent: true, });
     BioImageMesh = new THREE.Mesh(BioImageGeometry, BioImageMaterial);
@@ -89,7 +89,7 @@ export function setupObjects(scene, color) {
     scene.add(BioImageMesh);
 
     // Bio title
-    var BioTitleTexture = new THREE.TextureLoader().load('/assets/textimages/BioTitleText1000x200.png');
+    var BioTitleTexture = new THREE.TextureLoader().load('./assets/textimages/BioTitleText1000x200.png');
     const BioTitleTextGeometry = new THREE.PlaneGeometry(15, 3);
     const BioTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BioTitleTexture, transparent: true, });
     BioTitleTextMesh = new THREE.Mesh(BioTitleTextGeometry, BioTitleTextMaterial);
@@ -103,7 +103,7 @@ export function setupObjects(scene, color) {
     scene.add(leftMenuBox);
 
     // Projects Text
-    var ProjectsTextTexture = new THREE.TextureLoader().load('/assets/textimages/ProjectsText1000x200.png');
+    var ProjectsTextTexture = new THREE.TextureLoader().load('./assets/textimages/ProjectsText1000x200.png');
     const ProjectsTextGeometry = new THREE.PlaneGeometry(15, 3);
     const ProjectsTextMaterial = new THREE.MeshBasicMaterial({ map: ProjectsTextTexture, transparent: true, });
     const ProjectsTextMesh = new THREE.Mesh(ProjectsTextGeometry, ProjectsTextMaterial);
@@ -113,7 +113,7 @@ export function setupObjects(scene, color) {
     // --- Portfolio Project Buttons ---------------
 
     // UNREAL ENGINE text
-    var UnrealEngineTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnrealEngineText800x160.png');
+    var UnrealEngineTextTexture = new THREE.TextureLoader().load('./assets/textimages/UnrealEngineText800x160.png');
     const UnrealEngineTextGeometry = new THREE.PlaneGeometry(12, 2.4);
     const UnrealEngineTextMaterial = new THREE.MeshBasicMaterial({ map: UnrealEngineTextTexture, transparent: true, });
     const UnrealEngineTextMesh = new THREE.Mesh(UnrealEngineTextGeometry, UnrealEngineTextMaterial);
@@ -121,7 +121,7 @@ export function setupObjects(scene, color) {
     scene.add(UnrealEngineTextMesh);    
 
         // Bee algorithm sim text
-        const BeeAlgorithmSimTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimText800x130.png');
+        const BeeAlgorithmSimTextTexture = new THREE.TextureLoader().load('./assets/textimages/BeeAlgorithmSimText800x130.png');
         const BeeAlgorithmSimTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const BeeAlgorithmSimTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmSimTextTexture, 
             transparent: true, 
@@ -142,7 +142,7 @@ export function setupObjects(scene, color) {
         BeeAlgorithmSimSelectedMesh.visible = false;
 
             // Bee Algo Title Meshes 
-            var BeeAlgorithmSimTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimTitleText1400x200.png');
+            var BeeAlgorithmSimTitleTextTexture = new THREE.TextureLoader().load('./assets/textimages/BeeAlgorithmSimTitleText1400x200.png');
             const BeeAlgorithmSimTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
             const BeeAlgorithmSimTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmSimTitleTextTexture, 
                 transparent: true, 
@@ -153,7 +153,7 @@ export function setupObjects(scene, color) {
             BeeAlgorithmSimTitleTextMesh.visible = false;     
 
                         // Bee Algo desc
-                        var BeeAlgorithmDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/BeeAlgorithmSimDescText2000x2000.png');
+                        var BeeAlgorithmDescTextTexture = new THREE.TextureLoader().load('./assets/textimages/BeeAlgorithmSimDescText2000x2000.png');
                         const BeeAlgorithmDescTextGeometry = new THREE.PlaneGeometry(20, 20);
                         const BeeAlgorithmDescTextMaterial = new THREE.MeshBasicMaterial({ map: BeeAlgorithmDescTextTexture, transparent: true, });
                         BeeAlgorithmDescTextMesh = new THREE.Mesh(BeeAlgorithmDescTextGeometry, BeeAlgorithmDescTextMaterial);
@@ -163,7 +163,7 @@ export function setupObjects(scene, color) {
 
                  
         // BearPit text
-        const BearPitTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitText800x130.png');
+        const BearPitTextTexture = new THREE.TextureLoader().load('./assets/textimages/BearPitText800x130.png');
         const BearPitTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const BearPitTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitTextTexture, transparent: true, });
         BearPitTextMesh = new THREE.Mesh(BearPitTextGeometry, BearPitTextMaterial);
@@ -184,7 +184,7 @@ export function setupObjects(scene, color) {
 
 
             // BearPit Title Meshes 
-            var BearPitTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitTitleText1400x200.png');
+            var BearPitTitleTextTexture = new THREE.TextureLoader().load('./assets/textimages/BearPitTitleText1400x200.png');
             const BearPitTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
             const BearPitTitleTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitTitleTextTexture, 
                 transparent: true, 
@@ -195,7 +195,7 @@ export function setupObjects(scene, color) {
             BearPitTitleTextMesh.visible = false;   
 
                         // BearPit desc
-                        var BearPitDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/BearPitDescText2000x2000.png');
+                        var BearPitDescTextTexture = new THREE.TextureLoader().load('./assets/textimages/BearPitDescText2000x2000.png');
                         const BearPitDescTextGeometry = new THREE.PlaneGeometry(20, 20);
                         const BearPitDescTextMaterial = new THREE.MeshBasicMaterial({ map: BearPitDescTextTexture, transparent: true, });
                         BearPitDescTextMesh = new THREE.Mesh(BearPitDescTextGeometry, BearPitDescTextMaterial);
@@ -206,7 +206,7 @@ export function setupObjects(scene, color) {
 
 
     // Unity text
-    var UnityTextTexture = new THREE.TextureLoader().load('/assets/textimages/UnityText800x160.png');
+    var UnityTextTexture = new THREE.TextureLoader().load('./assets/textimages/UnityText800x160.png');
     const UnityTextGeometry = new THREE.PlaneGeometry(12, 2.4);
     const UnityTextMaterial = new THREE.MeshBasicMaterial({ map: UnityTextTexture, transparent: true, });
     const UnityTextMesh = new THREE.Mesh(UnityTextGeometry, UnityTextMaterial);
@@ -214,7 +214,7 @@ export function setupObjects(scene, color) {
     scene.add(UnityTextMesh);       
 
        // AR museum app sim text
-        var ARMuseumAppTextTexture = new THREE.TextureLoader().load('/assets/textimages/ARMuseumAppText800x130.png');
+        var ARMuseumAppTextTexture = new THREE.TextureLoader().load('./assets/textimages/ARMuseumAppText800x130.png');
         const ARMuseumAppTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const ARMuseumAppTextMaterial = new THREE.MeshBasicMaterial({ map: ARMuseumAppTextTexture, transparent: true, });
         ARMuseumAppTextMesh = new THREE.Mesh(ARMuseumAppTextGeometry, ARMuseumAppTextMaterial);
@@ -233,7 +233,7 @@ export function setupObjects(scene, color) {
         ARMuseumAppSelectedMesh.visible = false;
 
             // AR museum app title 
-            var ARMuseumAppTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/ARMuseumAppTitleText1400x200.png');
+            var ARMuseumAppTitleTextTexture = new THREE.TextureLoader().load('./assets/textimages/ARMuseumAppTitleText1400x200.png');
             const ARMuseumAppTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
             const ARMuseumAppTitleTextMaterial = new THREE.MeshBasicMaterial({ map: ARMuseumAppTitleTextTexture, 
                 transparent: true, 
@@ -244,7 +244,7 @@ export function setupObjects(scene, color) {
             ARMuseumAppTitleTextMesh.visible = false;   
 
                      // Ar museum app desc
-                        var MuseumARAppDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/MuseumARAppDescText2000x1400.png');
+                        var MuseumARAppDescTextTexture = new THREE.TextureLoader().load('./assets/textimages/MuseumARAppDescText2000x1400.png');
                         const MuseumARAppDescTextGeometry = new THREE.PlaneGeometry(20, 14);
                         const MuseumARAppDescTextMaterial = new THREE.MeshBasicMaterial({ map: MuseumARAppDescTextTexture, transparent: true, });
                         MuseumARAppDescTextMesh = new THREE.Mesh(MuseumARAppDescTextGeometry, MuseumARAppDescTextMaterial);
@@ -255,7 +255,7 @@ export function setupObjects(scene, color) {
 
 
         // Theatrix VR text
-        var TheatrixVRTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixVRText800x130.png');
+        var TheatrixVRTextTexture = new THREE.TextureLoader().load('./assets/textimages/TheatrixVRText800x130.png');
         const TheatrixVRTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const TheatrixVRTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRTextTexture, transparent: true, });
         TheatrixVRTextMesh = new THREE.Mesh(TheatrixVRTextGeometry, TheatrixVRTextMaterial);
@@ -274,7 +274,7 @@ export function setupObjects(scene, color) {
         TheatrixSelectedMesh.visible = false;
 
             // Theatrix VR title
-            var TheatrixVRTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixTitleText1400x200.png');
+            var TheatrixVRTitleTextTexture = new THREE.TextureLoader().load('./assets/textimages/TheatrixTitleText1400x200.png');
             const TheatrixVRTitleTextGeometry = new THREE.PlaneGeometry(21, 3);
             const TheatrixVRTitleTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRTitleTextTexture, 
                 transparent: true, 
@@ -285,7 +285,7 @@ export function setupObjects(scene, color) {
             TheatrixVRTitleTextMesh.visible = false;   
 
                     // Ar museum app desc
-                    var TheatrixVRDescTextTexture = new THREE.TextureLoader().load('/assets/textimages/TheatrixVRDescText2000x1400.png');
+                    var TheatrixVRDescTextTexture = new THREE.TextureLoader().load('./assets/textimages/TheatrixVRDescText2000x1400.png');
                     const TheatrixVRDescTextGeometry = new THREE.PlaneGeometry(20, 14);
                     const TheatrixVRDescTextMaterial = new THREE.MeshBasicMaterial({ map: TheatrixVRDescTextTexture, transparent: true, });
                     TheatrixVRDescTextMesh = new THREE.Mesh(TheatrixVRDescTextGeometry, TheatrixVRDescTextMaterial);
@@ -294,7 +294,7 @@ export function setupObjects(scene, color) {
                     TheatrixVRDescTextMesh.visible = false;  
 
     // --- Link Text ---          
-    var LinkTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinkText800x160.png');
+    var LinkTextTexture = new THREE.TextureLoader().load('./assets/textimages/LinkText800x160.png');
     const LinkTextGeometry = new THREE.PlaneGeometry(12, 2.4);
     const LinkTextMaterial = new THREE.MeshBasicMaterial({ map: LinkTextTexture, 
         transparent: true, 
@@ -308,7 +308,7 @@ export function setupObjects(scene, color) {
 
 
     // --- YouTube Text ---          
-    var YouTubeTextTexture = new THREE.TextureLoader().load('/assets/textimages/YouTubeText800x160.png');
+    var YouTubeTextTexture = new THREE.TextureLoader().load('./assets/textimages/YouTubeText800x160.png');
     const YouTubeTextGeometry = new THREE.PlaneGeometry(12, 2.4);
     const YouTubeTextMaterial = new THREE.MeshBasicMaterial({ map: YouTubeTextTexture, 
         transparent: true, 
@@ -321,7 +321,7 @@ export function setupObjects(scene, color) {
     YouTubeTextMesh.name = 'YouTubeLink';   
 
     // --- Dates Text ---                
-    var Date2023TextTexture = new THREE.TextureLoader().load('/assets/textimages/Date2023Text320x160.png');
+    var Date2023TextTexture = new THREE.TextureLoader().load('./assets/textimages/Date2023Text320x160.png');
     const Date2023TextGeometry = new THREE.PlaneGeometry(4.8, 2.4);
     const Date2023TextMaterial = new THREE.MeshBasicMaterial({ map: Date2023TextTexture, 
         transparent: true, 
@@ -331,7 +331,7 @@ export function setupObjects(scene, color) {
     scene.add(Date2023TextMesh);
     Date2023TextMesh.visible = false;   
 
-    var Date2025TextTexture = new THREE.TextureLoader().load('/assets/textimages/Date2025Text320x160.png');
+    var Date2025TextTexture = new THREE.TextureLoader().load('./assets/textimages/Date2025Text320x160.png');
     const Date2025TextGeometry = new THREE.PlaneGeometry(4.8, 2.4);
     const Date2025TextMaterial = new THREE.MeshBasicMaterial({ map: Date2025TextTexture, 
         transparent: true, 
@@ -344,7 +344,7 @@ export function setupObjects(scene, color) {
 
 
     // ------- Links section Text --------
-    var LinksTitleTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinksTitleText1000x200.png');
+    var LinksTitleTextTexture = new THREE.TextureLoader().load('./assets/textimages/LinksTitleText1000x200.png');
     const LinksTitleTextGeometry = new THREE.PlaneGeometry(15, 3);
     const LinksTitleTextMaterial = new THREE.MeshBasicMaterial({ map: LinksTitleTextTexture, transparent: true, });
     const LinksTitleTextMesh = new THREE.Mesh(LinksTitleTextGeometry, LinksTitleTextMaterial);
@@ -352,7 +352,7 @@ export function setupObjects(scene, color) {
     scene.add(LinksTitleTextMesh);
     
         // LinkedIn btn
-        var LinkedInTextTexture = new THREE.TextureLoader().load('/assets/textimages/LinkedInText800x130.png');
+        var LinkedInTextTexture = new THREE.TextureLoader().load('./assets/textimages/LinkedInText800x130.png');
         const LinkedInTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const LinkedInTextMaterial = new THREE.MeshBasicMaterial({ map: LinkedInTextTexture, transparent: true, });
         LinkedInTextMesh = new THREE.Mesh(LinkedInTextGeometry, LinkedInTextMaterial);
@@ -362,7 +362,7 @@ export function setupObjects(scene, color) {
         LinkedInTextMesh.name = 'LinkedInBtn';
 
         // Github btn
-        var GithubTextTexture = new THREE.TextureLoader().load('/assets/textimages/GithubText800x130.png');
+        var GithubTextTexture = new THREE.TextureLoader().load('./assets/textimages/GithubText800x130.png');
         const GithubTextGeometry = new THREE.PlaneGeometry(12, 2.4);
         const GithubTextMaterial = new THREE.MeshBasicMaterial({ map: GithubTextTexture, transparent: true, });
         GithubTextMesh = new THREE.Mesh(GithubTextGeometry, GithubTextMaterial);
