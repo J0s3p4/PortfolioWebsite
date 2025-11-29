@@ -14,7 +14,7 @@ LinkTextMesh, YouTubeTextMesh,
 Date2023TextMesh, Date2025TextMesh,
 LinkedInTextMesh, GithubTextMesh; 
 
-import ImportedFaceImagetexture from '/public/assets/images/Face.jpg';
+//import ImportedFaceImagetexture from '/public/assets/images/Face.jpg';
 
 // Creates and adds all 3d objects to the scene
 export function setupObjects(scene, color) {
@@ -74,7 +74,7 @@ export function setupObjects(scene, color) {
     scene.add(rightMenuBox);
 
     // FaceImage
-    var FaceImageTexture = new THREE.TextureLoader().load(ImportedFaceImagetexture);
+    var FaceImageTexture = new THREE.TextureLoader().load('/public/assets/images/Face.jpg');
     const FaceImageGeometry = new THREE.PlaneGeometry(10, 10);
     const FaceImageMaterial = new THREE.MeshBasicMaterial({ map: FaceImageTexture });
     FaceImageMesh = new THREE.Mesh(FaceImageGeometry, FaceImageMaterial);
