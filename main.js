@@ -117,6 +117,12 @@ function handleAllClicks(mesh) {
         } 
             break;
 
+        case 'YouTubeLink': // Action for Link
+        if (linkOpen == true) {
+            window.open(currentYouTubeLink, "_blank");;
+        } 
+            break;
+
         case 'LinkedInBtn': // Action for LinkedIn Link
             window.open("https://www.linkedin.com/in/josephcarlyle/", "_blank");;
             break;
